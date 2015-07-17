@@ -1,0 +1,30 @@
+template(name="wishpool")
+  .wishpool-widget(style="{{style}}")
+    form.widget-form
+      if subscriptionHandle.ready
+        .fake.widget-group.input-group
+          .placeholder.simplebox.form-control
+            span.invisible {{widget.label}}
+            span.text {{widget.placeholder}}
+          span.input-group-btn
+            button.btn.btn-success(type="submit")
+              i(class="{{widget.buttonIcon}}")
+              | {{widget.buttonText}}
+        .real.widget-group.input-group
+          input.wishpool-input.simplebox.form-control(id="text" name="text" autocomplete="off" value="{{widget.label}} ")
+          span.input-group-btn
+            button.btn.btn-success(type="submit")
+              i(class="{{widget.buttonIcon}}")
+              | {{widget.buttonText}}
+      else
+        .placeholder.simplebox.form-control
+          span Loading...
+    form.email-form
+      .ask-email.input-group(style="display: none;")
+        input.email-input.form-control(id="email" name="email" placeholder="Please leave your email here for us to answer:)" autofocus="autofocus")
+        span.input-group-btn
+          button.btn.btn-success.leave-email(type="submit")
+            i(class="{{widget.buttonIcon}}")
+            | {{widget.buttonText}}
+    .success.simplebox.form-control(style="display: none;")
+      | Sent!
