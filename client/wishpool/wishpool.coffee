@@ -31,8 +31,8 @@ Template.wishpool.events
     sourceUrl = "https://widget.wishpool.me/" + template.data.widgetId + "?"
     userEmail = ""
     parentUrl = location.protocol + "//" + location.hostname + (if location.port then ':' + location.port else '') + Iron.Location.get().path
-    if Foreach.currentUserReady()
-      currentUser = Foreach.currentUser()
+    if Spire.currentUserReady()
+      currentUser = Spire.currentUser()
       userEmail = currentUser.emails[0].address
       sourceUrl += "userName=" + encodeURIComponent(currentUser.profile.name)
       sourceUrl += "&userEmail=" + encodeURIComponent(userEmail)
